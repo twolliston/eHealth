@@ -23,3 +23,7 @@ Route::group(['prefix' => 'admin'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/patients', 'PatientController');
+
+// Route::get('patients/destroy/{id}', ['as' => 'patients.get.destroy', 'uses' => 'PatientsController@getDestroy']);
