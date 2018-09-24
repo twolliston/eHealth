@@ -16,7 +16,7 @@
     <style>
         html,
         body {
-            background-image: url(/images/medical.png) no-repeat center center fixed;
+            background-image: url(/../../images/medical.png) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
