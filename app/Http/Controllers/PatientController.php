@@ -16,6 +16,8 @@ class PatientController extends Controller
      */
     public function index()
     {
+        // 
+        
         // Get all the patients
         $patients = Patient::all();
         // var_dump(patients);
@@ -64,8 +66,6 @@ class PatientController extends Controller
         $patient->maritalstatus = $request->maritalstatus;
         $patient->created_at = $request->created_at;
         $patient->updated_at = $request->updated_at;
-
-
 
         $patient->save();
         return redirect()->back();
@@ -173,12 +173,12 @@ class PatientController extends Controller
     public function destroy($id)
     {
         //
-        $rsltDelRec = Patient::findOrFail($id);
-        $rsltDelRec->destroy(); 
+        // $rsltDelRec = Patient::findOrFail($id);
+        // $rsltDelRec->destroy(); 
 
-        $request->session()->flash('alert-success', 'Patient profile deleted successfully.');
+        // $request->session()->flash('alert-success', 'Patient profile deleted successfully.');
         // return redirect()->route('admin.flags');
-        return redirect()->action('PatientController@show', [$id]);
+        // return redirect()->action('PatientController@show', [$id]);
 
     }
 }  

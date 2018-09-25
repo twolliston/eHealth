@@ -5,7 +5,7 @@ Update a Patient
 @stop
 
 @section('content')
-  <h1>Update Patient info {{$patient->firstname}}</h1>
+  <h1>Update Patient'section info {{$patient->firstname}}</h1>
 
     <hr>
 
