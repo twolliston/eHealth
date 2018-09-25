@@ -140,6 +140,7 @@ Update a Patient's profile
 
 
 <div class="checkbox">
+
 <label>
    <input type="checkbox" name="my_history[]" value="Happy"
     {{in_array("Happy",$myhistory)?"checked":""}}>

@@ -26,6 +26,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/patients', 'PatientController');
 Route::resource('/patients/profile', 'PatientControllerProfile');
+Route::resource('/patients/familyhistory', 'PatientControllerfamilyhistory');
+Route::resource('/patients/myhistory', 'PatientControllerMyhistory');
 
 
 
