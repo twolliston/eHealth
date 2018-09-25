@@ -4,8 +4,8 @@
     <h3 style="margin-left: 4px; font-size: 30px"><i class="fas fa-notes-medical" style="margin-left: 3px;"></i> eHealth</h3>
     <br>
     <ul style="padding: 6px 8px 6px 16px; text-decoration: none; font-size: 20px; display: block; list-style: none;">
-        <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/patients/51/edit" style="color:black;">  Profile</a></li>
-        <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/patients/51/edit" style="color:black;">  Patient History</a></li>
+        <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/patients/profile/{{Auth::user()->id}}/edit" style="color:black;">  Profile</a></li>
+      {{--  <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/patients/51/edit" style="color:black;">  Patient History</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#" style="color:black;">  Family History</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#" style="color:black;">  Link 4</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#" style="color:black;">  Link 5</a></li>
@@ -15,7 +15,7 @@
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#" style="color:black;">  Link 9</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#" style="color:black;">  Link 10</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#" style="color:black;">  Link 11</a></li>
-        <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#" style="color:black;">  Link 12</a></li>
+        <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#" style="color:black;">  Link 12</a></li> --}}
     </ul>
 </div>
 
@@ -29,17 +29,30 @@
             Family History for {{$patient->firstname}} {{$patient->lastname}}
         </div>
         <div class="card-body">
-            <form action="/patients/{{ $patient->id }}" method="post">
-                {{ csrf_field() }} {{ method_field('PATCH')}}
+            <form action="/patients/familyhistory/{{ $patient->id }}" method="post">
+                {{ csrf_field() }} 
+                {{ method_field('PATCH')}}
+
+
+                <?php
+                if (!empty($patient->family_history)) {
+                $familyhistory = explode(",", $patient->family_history);
+                } else {
+                // Set array to blanks if null
+                $familyhistory =[];
+                }
+                ?>
+
                 <h5>Check all boxes that apply:</h5>
                 <div class="row">
-                    <div class="col form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
+               <div class="col form-check">
+                    <input class="form-check-input" type="checkbox" id="defaultCheck1" name="family_history[]" value="Alcoholism" {{in_array("Alcoholism",$familyhistory)?"checked":""}}>
+                    <label class="form-check-label" for="defaultCheck1">
                             Alcoholism
-                        </label>
-                    </div>
-                    <div class="col form-check">
+                    </label>
+                </div>
+             
+                    {{-- <div class="col form-check">
                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
                             Alzheimer's
@@ -602,7 +615,8 @@
                         <label class="form-check-label" for="defaultCheck1">
                             Ulcers
                         </label>
-                    </div>
+                    </div> --}}
+                    <button class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
