@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-Dispal All Patient
+Display All Patient
 @stop
 
 @section('content')

@@ -55,14 +55,18 @@ Update a Patient
     </fieldset>
 
      <fieldset class="form-group">
-      <label for="address" >Address</label>
-      <input name="address" class="form-control" type="text" value="<?= $patient->address?>" placeholder="Address">
+      <label for="address_1" >Address</label>
+      <input name="address_1" class="form-control" type="text" value="<?= $patient->address_1?>" placeholder="Address">
+    </fieldset>
+       <fieldset class="form-group">
+      <label for="address_2" >Address</label>
+      <input name="address_2" class="form-control" type="text" value="<?= $patient->address_2?>" placeholder="Address">
     </fieldset>
    
      
      <fieldset class="form-group">
       <label for="city" >City</label>
-      <input name="city" class="form-control" placeholder="City" value="<?= $patient->city?>" required>
+      <input name="city" class="form-control" placeholder="City" value="<?= $patient->city ?>" required>
     </fieldset>
 
       <fieldset class="form-group">
