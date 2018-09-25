@@ -29,6 +29,8 @@ Route::resource('/patients/profile', 'PatientControllerProfile');
 Route::resource('/patients/familyhistory', 'PatientControllerfamilyhistory');
 Route::resource('/patients/myhistory', 'PatientControllerMyhistory');
 
+Route::resource('/physicians', 'PhysicianController');
+
 
 
 // Route::get('patients/destroy/{id}', ['as' => 'patients.get.destroy', 'uses' => 'PatientsController@getDestroy']);
