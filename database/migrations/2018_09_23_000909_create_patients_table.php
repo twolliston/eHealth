@@ -20,7 +20,8 @@ class CreatePatientsTable extends Migration
             $table->string('firstname', 191);
             $table->string('middle', 191)->nullable();
             $table->string('lastname', 191);
-            $table->string('address', 191);
+            $table->string('address_1', 191);
+            $table->string('address_2', 191);
             $table->integer('housenumber')->nullable();
             $table->string('postalcode');
             $table->string('city', 191);
@@ -32,6 +33,8 @@ class CreatePatientsTable extends Migration
             $table->year('birth_year')->nullable();
             $table->tinyInteger('gender')->nullable();
             $table->tinyInteger('maritalstatus')->nullable();
+            $table->text('my_history');
+            $table->text('family_history');
             $table->timestamps();
         });
     }

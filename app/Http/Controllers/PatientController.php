@@ -49,7 +49,8 @@ class PatientController extends Controller
         $patient->firstname = $request->firstname;
         $patient->middle = $request->middle;
         $patient->lastname = $request->lastname;
-        $patient->address = $request->address;
+        $patient->address_1 = $request->address_1;
+        $patient->address_2 = $request->address_2;
         $patient->housenumber = $request->housenumber;
         $patient->postalcode = $request->postalcode;
         $patient->city = $request->city;
@@ -96,7 +97,21 @@ class PatientController extends Controller
 
         //
         return view('patients.edit')->withPatient(Patient::find($id));
+     
     }
+
+
+
+    public function profile($id)
+    {
+        // var_dump(Patient::find($id));
+        //
+        return view('patients.edit')->withPatient(Patient::find($id));
+        // return view('patients.myhistory')->withPatient(Patient::find($id));
+        // return view('patients.familyhistory')->withPatient(Patient::find($id));
+    }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -121,18 +136,32 @@ class PatientController extends Controller
         if (strlen($request->lastname) !== 0) {
             $patient->lastname = $request->lastname;
         }
-        if (strlen($request->address) !== 0) {
-            $patient->address = $request->address;
+        if (strlen($request->address_1) !== 0) {
+            $patient->address_1 = $request->address_1;
+        }
+        if (strlen($request->address_2) !== 0) {
+            $patient->address_2 = $request->address_2;
         }
         if (strlen($request->housenumber) !== 0) {
             $patient->housenumber = $request->housenumber;
         }
+        if (strlen($request->city) !== 0) {
+            $patient->city = $request->city;
+        }
+        if (strlen($request->state) !== 0) {
+            $patient->state = $request->state;
+        }
+        if (strlen($request->postalcode) !== 0) {
+            $patient->postalcode = $request->postalcode;
+        }
       
-        $patient->save();
+        // $patient->save();
 
         //Return the view
 
-        return redirect()->action('PatientController@show', [$id]);
+        // return redirect()->action('PatientController@show', [$id]);
+         return redirect()->action('HomeController@index');
+       
     }
 
     /**

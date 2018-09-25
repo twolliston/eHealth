@@ -25,5 +25,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/patients', 'PatientController');
+Route::resource('/patients/profile', 'PatientControllerProfile');
+
+
 
 // Route::get('patients/destroy/{id}', ['as' => 'patients.get.destroy', 'uses' => 'PatientsController@getDestroy']);
