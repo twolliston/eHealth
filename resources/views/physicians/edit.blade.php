@@ -5,7 +5,7 @@ Update a Physician
 @stop
 
 @section('content')
-  <h1>Update Physician's info {{$physician->nickname}}</h1>
+  <h1>Update Physician's info {{$physician->nickname}} {{$physician->id}}</h1>
 
     <hr>
 
@@ -16,6 +16,10 @@ Update a Physician
      <fieldset class="form-group">
       <label for="nickname" >Nick Name</label>
       <input name="nickname" class="form-control" placeholder="Nick Name" value="<?=$physician->nickname?>" required>
+    </fieldset>
+
+      <fieldset class="form-group">
+      <input name="physicianid" class="form-control" hidden value={{$physician->physicianid}}>
     </fieldset>
 
    <fieldset class="form-group">
