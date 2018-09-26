@@ -31,7 +31,7 @@
             Personal History for {{$patient->firstname}} {{$patient->lastname}}
         </div>
         <div class="card-body">
-            <form action="/patients/familyhistory/{{ $patient->id }}" method="post">
+            <form action="/patients/myhistory/{{ $patient->id }}" method="post">
                 {{ csrf_field() }} {{ method_field('PATCH')}}
 
 
@@ -54,22 +54,22 @@
                         </label>
                         </div>
                         <div class="col form-check">
-                            <input class="form-check-input" type="checkbox" id="defaultCheck1" name="my_history[]" value="Alcoholism" {{in_array(
-                                "Alcoholism",$myhistory)? "checked": ""}}>
+                            <input class="form-check-input" type="checkbox" id="defaultCheck1" name="my_history[]" value="Alzheimer's" {{in_array(
+                                "Alzheimer's",$myhistory)? "checked": ""}}>
                             <label class="form-check-label" for="defaultCheck1">
                             Alzheimer's
                         </label>
                         </div>
                         <div class="col form-check">
-                            <input class="form-check-input" type="checkbox" id="defaultCheck1" name="my_history[]" value="Alcoholism" {{in_array(
-                                "Alcoholism",$myhistory)? "checked": ""}}>
+                            <input class="form-check-input" type="checkbox" id="defaultCheck1" name="my_history[]" value="Amblyopia" {{in_array(
+                                "Amblyopia",$myhistory)? "checked": ""}}>
                             <label class="form-check-label" for="defaultCheck1">
                             Amblyopia
                         </label>
                         </div>
                         <div class="col form-check">
-                            <input class="form-check-input" type="checkbox" id="defaultCheck1" name="my_history[]" value="Alcoholism" {{in_array(
-                                "Alcoholism",$myhistory)? "checked": ""}}>
+                            <input class="form-check-input" type="checkbox" id="defaultCheck1" name="my_history[]" value="Anaphylaxis" {{in_array(
+                                "Anaphylaxis",$myhistory)? "checked": ""}}>
                             <label class="form-check-label" for="defaultCheck1">
                             Anaphylaxis
                         </label>
@@ -77,8 +77,8 @@
                     </div>
                     <div class="row">
                         <div class="col form-check">
-                            <input class="form-check-input" type="checkbox" id="defaultCheck1" name="my_history[]" value="Alcoholism" {{in_array(
-                                "Alcoholism",$myhistory)? "checked": ""}}>
+                            <input class="form-check-input" type="checkbox" id="defaultCheck1" name="my_history[]" value="Anemia" {{in_array(
+                                "Anemia",$myhistory)? "checked": ""}}>
                             <label class="form-check-label" for="defaultCheck1">
                             Anemia
                         </label>

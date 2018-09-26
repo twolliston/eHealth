@@ -75,8 +75,8 @@
 
         <div class="form-row">
           <fieldset class="form-group col-md-2">
-            <label for="housenumber">Building Number</label>
-            <input name="housenumber" class="form-control" placeholder="House Number" value={{$physician->housenumber}} required>
+            <label for="streetnumber">Street Number</label>
+            <input name="streetnumber" class="form-control" placeholder="Street Number" value={{$physician->streetnumber}} required>
           </fieldset>
 
           <fieldset class="form-group col-md-6">
@@ -132,13 +132,4 @@
         <button class="btn btn-primary">Submit</button>
 
       </form>
-
-
-
-
-
-
-
-
-      
 @stop

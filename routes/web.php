@@ -33,4 +33,5 @@ Route::resource('/physicians', 'PhysicianController');
 
 
 
+
 // Route::get('patients/destroy/{id}', ['as' => 'patients.get.destroy', 'uses' => 'PatientsController@getDestroy']);

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 // Brings in user model
 use App\Physician;
+use Auth;
 
 class PhysicianController extends Controller
 {
@@ -33,6 +35,8 @@ class PhysicianController extends Controller
     {
         //
         return view('physicians.create');
+    
+        
     }
 
     /**
@@ -45,8 +49,11 @@ class PhysicianController extends Controller
     {
         //
         // Get a user
+        $user = Auth::user();
+        $id = $user->id;
+        
         $physician = new Physician();
-        $physician->user_id = Auth::loginUsingId();
+        $physician->user_id = $id;
         $physician->active = false;
         $physician->nickname = $request->nickname;
         $physician->firstname = $request->firstname;
@@ -54,7 +61,7 @@ class PhysicianController extends Controller
         $physician->lastname = $request->lastname;
         $physician->address_1 = $request->address_1;
         $physician->address_2 = $request->address_2;
-        $physician->housenumber = $request->housenumber;
+        $physician->streetnumber = $request->streetnumber;
         $physician->postalcode = $request->postalcode;
         $physician->city = $request->city;
         $physician->state = $request->state;
@@ -94,8 +101,22 @@ class PhysicianController extends Controller
     {
          // var_dump(Physician::find($id));
 
+
+        // $physician = Physician::all()->where('user_id', $id)->first();
+         $physician =  Physician::find($id);
+         return view('physicians.edit')->withPhysician($physician);
+       
+
         //
-        return view('physicians.edit')->withPhysician(Physician::find($id));
+        
+        
+        // if (is_null($physician)) {
+        //     // It does not exist - render add
+        //     return view('physicians.create');
+        // } else {
+        //     // It exists - render edit
+            // return view('physicians.edit')->withPhysician($physician);
+        // }
      
     }
 
@@ -109,7 +130,7 @@ class PhysicianController extends Controller
     public function update(Request $request, $id)
     {
        // update specific user
-
+    
        $physician = Physician::find($id);
        //Save out the new Physician
 
@@ -131,8 +152,8 @@ class PhysicianController extends Controller
        if (strlen($request->address_2) !== 0) {
         $physician->address_2 = $request->address_2;
        }
-       if (strlen($request->housenumber) !== 0) {
-        $physician->housenumber = $request->housenumber;
+       if (strlen($request->streetnumber) !== 0) {
+        $physician->streetnumber = $request->streetnumber;
        }
        if (strlen($request->city) !== 0) {
         $physician->city = $request->city;
@@ -149,7 +170,9 @@ class PhysicianController extends Controller
        //Return the view
 
        // return redirect()->action('PatientController@show', [$id]);
-        return redirect()->action('HomeController@index');
+        return redirect()->action('PhysicianController@index');
+    
+      
     }
 
     /**

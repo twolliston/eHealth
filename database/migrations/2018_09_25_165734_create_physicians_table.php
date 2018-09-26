@@ -22,8 +22,8 @@ class CreatePhysiciansTable extends Migration
             $table->string('middle', 191)->nullable();
             $table->string('lastname', 191);
             $table->string('address_1', 191);
-            $table->string('address_2', 191);
-            $table->integer('housenumber')->nullable();
+            $table->string('address_2', 191)->nullable();
+            $table->integer('streetnumber');
             $table->string('postalcode');
             $table->string('city', 191);
             $table->string('state', 191);
