@@ -2,13 +2,14 @@
 @section('title') Update a Patient's profile 
 @stop 
 @section('content') {{-- Side Navbar --}}
-<div class="sidenav" style="height: 100%; width: 240px; position: fixed; z-index: 1; background-color:blue; top: 0; left: 0; overflow-x: hidden; padding-top: 20px;">
+<div class="sidenav" style="height: 100%; width: 240px; position: fixed; z-index: 1; background-color:#DFEBFA; top: 0; left: 0; overflow-x: hidden; padding-top: 20px;">
   <h3 style="margin-left: 4px; font-size: 38px; text-align:center"><i class="fas fa-notes-medical" style="margin-left: 3px;"></i> eHealth</h3>
   <br>
   <ul style="padding: 6px 8px 6px 16px; text-decoration: none; font-size: 20px; display: block; list-style: none;">
-    <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/patients/profile/{{Auth::user()->id}}/edit" style="color:black;">  Profile</a></li>
-    <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/patients/familyhistory/{{Auth::user()->id}}/edit" style="color:black;">  Family History</a></li>
-    <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/patients/myhistory/{{Auth::user()->id}}/edit" style="color:black;">  Personal History</a></li>
+    <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/profile/{{Auth::user()->id}}/edit" style="color:black;">  Profile</a></li>
+    <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/myhistory/{{Auth::user()->id}}/edit" style="color:black;">  Personal History</a></li>
+    <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/familyhistory/{{Auth::user()->id}}/edit" style="color:black;">  Family History</a></li>
+    <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/physicians/{{Auth::user()->id}}/edit" style="color:black;">  Manage Physicians</a></li>
     {{--
     <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
     <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
@@ -23,20 +24,12 @@
   </ul>
 </div>
 
-
-
-
 {{-- Start of the Main Content --}}
 <div class="container col-md-10" style="margin-left: 240px; padding: 0px 10px;">
-  <div class="jumbotron" style="background-image: url(../../../images/medical.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;">
-    <p>hsdakhkdlsahdkldaahlka</p>
+  <div class="jumbotron" style="background:url({{ URL::asset('images/profile.png') }}) no-repeat center center; background-size:60%; height:250px">
   </div>
   <div class="card">
-    <div class="card-header">
+    <div class="card-header" style="background-color:#DFEBFA">
       Profile for {{$patient->firstname}} {{$patient->lastname}}
     </div>
     <div class="card-body">
@@ -66,12 +59,12 @@
             <input name="housenumber" class="form-control" placeholder="House Number" value={{$patient->housenumber}} required>
           </div>
           <div class="form-group col-md-6">
-            <label for="address_1">Address 1</label>
+            <label for="address_1">Address</label>
             <input name="address_1" class="form-control" type="text" value="<?= $patient->address_1 ?>" placeholder="Address 1">
           </div>
 
           <div class="form-group col-md-4">
-            <label for="address_2">Address 2</label>
+            <label for="address_2">Apartment Number</label>
             <input name="address_2" class="form-control" type="text" value="<?= $patient->address_2 ?>" placeholder="Address 2">
           </div>
         </div>
@@ -184,6 +177,7 @@
     </div>
 
   </div>
+
 
 
 
