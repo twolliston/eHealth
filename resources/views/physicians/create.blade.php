@@ -124,9 +124,9 @@ Create a Physician
   <br>
 
     <button class="btn btn-primary">Submit</button>
-
-  </form>
-        </div>
-    </div>
+      <a type="button" href="/physicians" class="btn btn-primary">Back</a> 
+    </form>
+  </div>
+</div>
 
 @stop

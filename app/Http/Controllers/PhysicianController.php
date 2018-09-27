@@ -183,8 +183,13 @@ class PhysicianController extends Controller
      */
     public function destroy($id)
     {
+        var_dump($id);
         //
         $physician = Physician::find($id);
-        $physician->destroy();
+        $physician->destroy($id);
+
+        //Then show the page
+      // todo  return redirect()->action('PhysicianController@index');
+      return redirect()->action('PhysicianController@index');
     }
 }
