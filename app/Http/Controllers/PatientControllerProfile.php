@@ -53,8 +53,8 @@ class PatientControllerProfile extends Controller
         if (strlen($request->address_2) !== 0) {
             $patient->address_2 = $request->address_2;
         }
-        if (strlen($request->housenumber) !== 0) {
-            $patient->housenumber = $request->housenumber;
+        if (strlen($request->streetnumber) !== 0) {
+            $patient->streetnumber = $request->streetnumber;
         }
         if (strlen($request->city) !== 0) {
             $patient->city = $request->city;

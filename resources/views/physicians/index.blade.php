@@ -20,7 +20,8 @@ Display All Physicians
     <br>
     @endforeach
    
-     <a class="btn btn-success" href="/physicians/create"> Create</a>
+     <a class="btn btn-success" href="/physicians/create"> New</a>
+      <a class="btn btn-success" href="{{ url('home') }}">Back</a>
 
 </div>
 

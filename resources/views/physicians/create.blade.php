@@ -54,17 +54,17 @@ Create a Physician
     </fieldset>
    
      
-     <fieldset class="form-group">
+    <fieldset class="form-group">
       <label for="city" >City</label>
       <input name="city" class="form-control" placeholder="City" value="" required>
     </fieldset>
 
-      <fieldset class="form-group">
+    <fieldset class="form-group">
       <label for="county" >County</label>
       <input name="county" class="form-control" placeholder="County" value="" required>
     </fieldset>
 
-       <fieldset class="form-group">
+    <fieldset class="form-group">
       <label for="state" >State</label>
       <input name="state" class="form-control" placeholder="State" value="" required>
     </fieldset>
@@ -85,7 +85,10 @@ Create a Physician
     </fieldset>
 
     <button class="btn btn-primary">Submit</button>
+   
  {{ csrf_field() }}
   </form>
+  <a class="btn btn-success" href="{{ url('physicians') }}">Back</a>
+  {{-- <button class="btn btn-success"><-- Back</button> --}}
 
 @stop
