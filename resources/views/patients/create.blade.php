@@ -27,10 +27,9 @@ Create a Patient
     </fieldset>
 
     <select class="form-control" id="select_1" name="gender">
-      <option value=0>---select one--</option>
-        <option value=1>Male</option>
-      <option value=2>Female</option>
-      <option value=3>Other</option>
+      <option>--select one--</option>
+        <option value="Male">Male</option>
+      <option value="Female">Female</option>
     </select>
 
      <fieldset class="form-group">
@@ -39,20 +38,25 @@ Create a Patient
     </fieldset>
 
     <select class="form-control" id="select_2" name="maritalstatus">
-      <option value=0>---select one--</option>
-        <option value=1>Single</option>
-      <option value=2>Married</option>
-      <option value=3>Divorce</option>
+      <option>--select one--</option>
+        <option value="Single">Single</option>
+      <option value="Married">Married</option>
+      <option value="Divorce">Divorce</option>
     </select>
 
      <fieldset class="form-group">
-      <label for="housenumber" >House Number</label>
-      <input name="housenumber" class="form-control" placeholder="House Number" required>
+      <label for="streetnumber" >Street Number</label>
+      <input name="streetnumber" class="form-control" placeholder="Street Number" required>
     </fieldset>
 
-     <fieldset class="form-group">
-      <label for="address" >Address</label>
-      <input name="address" class="form-control" placeholder="Address">
+      <fieldset class="form-group col-md-6">
+      <label for="address_1" >Address</label>
+      <input name="address_1" class="form-control" type="text" value="" placeholder="Address">
+    </fieldset>
+    
+       <fieldset class="form-group col-md-3">
+      <label for="address_2" >Suite Number</label>
+      <input name="address_2" class="form-control" type="text" value="" placeholder="Address">
     </fieldset>
 
      <fieldset class="form-group">

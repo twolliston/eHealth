@@ -47,7 +47,7 @@
     <br>
     <div class="row">
         <div class="col-md-12">
-            <a href="/patients/profile/{{Auth::user()->id}}/edit" style="text-align:center"><h3>Get Started by Filling Out Your Profile!!</h3></a>
+            <a href="/patients/create" style="text-align:center"><h3>Get Started by Filling Out Your Profile!!</h3></a>
         </div>
     </div>
 </div>

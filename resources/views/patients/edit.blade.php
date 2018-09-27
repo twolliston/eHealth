@@ -94,7 +94,8 @@ Update a Patient
       <input name="mobilenumber" class="form-control" placeholder="Mobile Number" value="<?=$patient->mobilenumber?>" required>
     </fieldset>
 
-    <button class="btn btn-primary">Submit</button>
+    <button class="btn btn-primary">Save</button>
+    <a type="button" href="/home" class="btn btn-primary">Back</a>    
 
   </form>
 
