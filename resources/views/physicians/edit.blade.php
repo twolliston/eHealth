@@ -31,20 +31,8 @@
   </div>
   <div class="card">
     <div class="card-header" style="background-color:#DFEBFA">
-      <div class="row">
-        <p class="intro" style="line-height:40px; margin:0">Update Physician's Info for </p>
-        <div class="dropdown" style="margin-left:20px;">
-          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-              {{$physician->nickname}}
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-      </div>
+      Update Physician's Info for {{$physician->nickname}}
+
     </div>
     <div class="card-body">
       <form action="/physicians/{{ $physician->id }}" method="post">
@@ -76,7 +64,8 @@
         <div class="form-row">
           <fieldset class="form-group col-md-2">
             <label for="streetnumber">Street Number</label>
-            <input name="streetnumber" class="form-control" placeholder="Street Number" value={{$physician->streetnumber}} required>
+            <input name="streetnumber" class="form-control" placeholder="Street Number" value={{$physician->streetnumber}}
+            required>
           </fieldset>
 
           <fieldset class="form-group col-md-6">
@@ -132,4 +121,5 @@
         <button class="btn btn-primary">Submit</button>
 
       </form>
+      
 @stop
