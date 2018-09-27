@@ -31,8 +31,8 @@ class CreatePatientsTable extends Migration
             $table->string('mobilenumber', 20)->nullable();
             $table->string('email', 191)->nullable();
             $table->year('birth_year')->nullable();
-            $table->tinyInteger('gender')->nullable();
-            $table->tinyInteger('maritalstatus')->nullable();
+            $table->string('gender', 10)->nullable();
+            $table->string('maritalstatus', 10)->nullable();
             $table->text('my_history')->nullable();
             $table->text('family_history')->nullable();
             $table->timestamps();

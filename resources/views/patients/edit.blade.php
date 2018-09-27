@@ -50,8 +50,8 @@ Update a Patient
     </select>
 
      <fieldset class="form-group">
-      <label for="housenumber" >House Number</label>
-      <input name="housenumber" class="form-control" placeholder="House Number" value={{$patient->housenumber}} required>
+      <label for="streetnumber" >House Number</label>
+      <input name="streetnumber" class="form-control" placeholder="Street Number" value={{$patient->streetnumber}} required>
     </fieldset>
 
      <fieldset class="form-group">

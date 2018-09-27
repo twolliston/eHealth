@@ -104,10 +104,12 @@ Create a Physician
       <input name="city" class="form-control" placeholder="City" value="" required>
     </fieldset>
 
+
       <fieldset class="form-group col-md-3">
       <label for="county" >County</label>
       <input name="county" class="form-control" placeholder="County" value="" required>
     </fieldset>
+
 
        <fieldset class="form-group col-md-3">
       <label for="state" >State</label>
@@ -122,7 +124,9 @@ Create a Physician
   <br>
 
     <button class="btn btn-primary">Submit</button>
+
   </form>
         </div>
     </div>
+
 @stop

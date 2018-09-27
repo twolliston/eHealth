@@ -35,6 +35,9 @@
         <a class="btn btn-primary btn-lg" style="float: right" href="/physicians/create"> Add A Physician</a></h2>
     </div>
     <br>
+
+      <a class="btn btn-success" href="{{ url('home') }}">Back</a>
+
     <div class="col-md-12">
     <div class="card-columns" style="column-count:3">
         @foreach ($physicians as $physician)
@@ -55,7 +58,6 @@
             @endforeach
     </div>
 </div>
-    
 
 
 </div>

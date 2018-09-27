@@ -53,7 +53,7 @@ class PatientController extends Controller
         $patient->lastname = $request->lastname;
         $patient->address_1 = $request->address_1;
         $patient->address_2 = $request->address_2;
-        $patient->housenumber = $request->housenumber;
+        $patient->streetnumber = $request->streetnumber;
         $patient->postalcode = $request->postalcode;
         $patient->city = $request->city;
         $patient->state = $request->state;
@@ -142,8 +142,8 @@ class PatientController extends Controller
         if (strlen($request->address_2) !== 0) {
             $patient->address_2 = $request->address_2;
         }
-        if (strlen($request->housenumber) !== 0) {
-            $patient->housenumber = $request->housenumber;
+        if (strlen($request->streetnumber) !== 0) {
+            $patient->steetnumber = $request->streetnumber;
         }
         if (strlen($request->city) !== 0) {
             $patient->city = $request->city;
