@@ -69,6 +69,7 @@ class PatientControllerProfile extends Controller
             $patient->county = $request->county;
         }
 
+         // todo Do not implode when array is empty   
         if (empty($request->my_history)) {
             $patient->my_history = $request->my_history;
             
@@ -76,17 +77,14 @@ class PatientControllerProfile extends Controller
             $patient->my_history = implode(",", $request->my_history);
         }
 
-         // todo Do not implode when array is empty   
-
-        // $patient->my_history = implode(",", $request->my_history);
-        // $patient->my_history = $request->my_history;
-
         $patient->save();
 
         //Return the view
 
-        // return redirect()->action('PatientController@show', [$id]);
-         return redirect()->action('HomeController@index');
+        return redirect()->action('PatientControllerProfile@edit', [$id]);
+        //  Future use
+        //  return redirect()->action('HomeController@index');
+       
     }
 
 

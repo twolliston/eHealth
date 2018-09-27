@@ -33,7 +33,8 @@ class PatientControllerFamilyHistory extends Controller
 
         $patient = Patient::find($id);
         // //Save out the new Patient
-
+        
+        // Do not implode when array is empty 
         if (empty($request->family_history)) {
             $patient->family_history = $request->family_history;
             
@@ -41,15 +42,10 @@ class PatientControllerFamilyHistory extends Controller
             $patient->family_history = implode(",", $request->family_history);
         }
 
-         // todo Do not implode when array is empty   
-
-        // $patient->my_history = implode(",", $request->my_history);
-        // $patient->my_history = $request->my_history;
-
         $patient->save();
 
         //Return the view
-
+        // return redirect()->action('PatientControllerFamilyHistory@edit', [$id]); 
         // return redirect()->action('PatientController@show', [$id]);
          return redirect()->action('HomeController@index');
     }

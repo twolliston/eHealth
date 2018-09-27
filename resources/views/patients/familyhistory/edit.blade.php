@@ -707,6 +707,7 @@
                         </div>
                     </div>
                     <button class="btn btn-primary">Submit</button>
+                      <a type="button" href="/home" class="btn btn-primary">Back</a> 
             </form>
         </div>
     </div>

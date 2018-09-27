@@ -184,5 +184,7 @@ class PhysicianController extends Controller
     public function destroy($id)
     {
         //
+        $physician = Physician::find($id);
+        $physician->destroy();
     }
 }

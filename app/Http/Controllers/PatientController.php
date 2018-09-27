@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 // Brings in user model
 use App\Patient;
+use Auth;
 
 class PatientController extends Controller
 {
@@ -44,9 +45,12 @@ class PatientController extends Controller
     public function store(Request $request)
     {
         //
+        $user = Auth::user();
+        $id = $user->id;
+
         // Get a user
         $patient = new Patient();
-        $patient->user_id = Auth::loginUsingId();
+        $patient->user_id = $id;
         $patient->active = false;
         $patient->firstname = $request->firstname;
         $patient->middle = $request->middle;
@@ -155,12 +159,14 @@ class PatientController extends Controller
             $patient->postalcode = $request->postalcode;
         }
       
-        // $patient->save();
+        $patient->save();
 
         //Return the view
 
+        // Future use    
         // return redirect()->action('PatientController@show', [$id]);
-         return redirect()->action('HomeController@index');
+        // return redirect()->action('HomeController@index');
+         return redirect()->action('PatientController@edit', [$id]);
        
     }
 
@@ -173,11 +179,8 @@ class PatientController extends Controller
     public function destroy($id)
     {
         //
-        // $rsltDelRec = Patient::findOrFail($id);
-        // $rsltDelRec->destroy(); 
-
-        // $request->session()->flash('alert-success', 'Patient profile deleted successfully.');
-        // return redirect()->route('admin.flags');
+       
+       
         // return redirect()->action('PatientController@show', [$id]);
 
     }
