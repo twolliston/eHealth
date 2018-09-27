@@ -10,7 +10,7 @@
         <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/myhistory/{{Auth::user()->id}}/edit" style="color:black;">  Personal History</a></li>
         <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/familyhistory/{{Auth::user()->id}}/edit"
                 style="color:black;">  Family History</a></li>
-        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/physicians/{{Auth::user()->id}}/edit" style="color:black;">  Manage Physicians</a></li>
+        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/physicians" style="color:black;">  Manage Physicians</a></li>
         {{--
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
@@ -51,9 +51,23 @@
                 {{-- go to a specific physician--}}
             </div>
                 <div class="card-footer">
-                    
-                <a class="btn btn-info" href="/physicians/{{$physician->id}}/edit">{{$physician->nickname}} Details</a>
+
+                {{-- <form action="physicians/{{$physician->id}}" method="DELETE">
+                    <input class="btn btn-info" type="submit">{{$physician->nickname}} Delete
+                </form>    --}}
+
+                 <a class="btn btn-info" href="/physicians/{{$physician->id}}/edit">{{$physician->nickname}} Details</a> 
+
+                <form action="/physicians/{{ $physician->id }}" method="post">
+                    {!! csrf_field() !!}
+                    {{ method_field('delete') }}
+                    <button class="btn btn-default" type="submit">Delete</button>
+                  
+                </form>
+
             </div>
+
+
         </div>
             @endforeach
     </div>
