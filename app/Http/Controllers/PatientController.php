@@ -50,6 +50,7 @@ class PatientController extends Controller
 
         // Get a user
         $patient = new Patient();
+        $patient->id = $id;
         $patient->user_id = $id;
         $patient->active = false;
         $patient->firstname = $request->firstname;
