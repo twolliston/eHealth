@@ -51,7 +51,7 @@
                     <div class="card-body">
                         <h6>First Name: {{$physician->firstname}}</h6>
                         <h6>Last Name: {{$physician->lastname}}</h6>
-                        <h6>Phone Number: {{$physician->phonenumber}}</h6>
+                        <p>Phone Number: {{$physician->phonenumber}}</p>
                         {{-- go to a specific physician--}}
                     </div>
                     <div class="card-footer">
@@ -72,9 +72,9 @@
                     </div>
                 </div>
 
-
+                @endforeach
             </div>
-            @endforeach
+           
         </div>
     </div>
 
