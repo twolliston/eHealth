@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 // Brings in user model
@@ -19,7 +20,18 @@ class PhysicianController extends Controller
     public function index()
     {
         //
+        // $user = Auth::user();
+        // $physicians = DB::table('physicians')->where('user_id', $user)->get();
+
+     
+
+
+
         // Get all the physicians
+        // Physician::all()->where('user_id', $id)->first();
+        // $physician =  Physician::where('user_id', $user);
+        
+
         $physicians = Physician::all();
         // var_dump(physicians);
         return view('physicians.index', compact('physicians'));
