@@ -8,7 +8,7 @@
         <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/myhistory/{{Auth::user()->id}}/edit" style="color:black;">  Personal History</a></li>
         <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/familyhistory/{{Auth::user()->id}}/edit"
                 style="color:black;">  Family History</a></li>
-        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/physicians/{{Auth::user()->id}}/edit" style="color:black;">  Manage Physicians</a></li>
+        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/physicians" style="color:black;">  Manage Physicians</a></li>
         {{--
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
@@ -29,7 +29,7 @@
     </div>
     <div class="card">
         <div class="card-header" style="background-color:#DFEBFA">
-            Family History for {{$patient->firstname}} {{$patient->lastname}}
+            <h3>Family History</h3>
         </div>
         <div class="card-body">
             <form action="/patients/familyhistory/{{ $patient->id }}" method="post">
@@ -706,9 +706,14 @@
                         </label>
                         </div>
                     </div>
-                    <button class="btn btn-primary">Submit</button>
-                      <a type="button" href="/home" class="btn btn-primary">Back</a> 
+                    <br>
+
+                    <div class="row" style="float:right">
+                        <button class="btn btn-primary">Submit</button>
+
             </form>
+            <button class="btn btn-info" style="margin-left:15px"><a href="/home" style="color:white; text-decoration:none">Return Home</a></button>
+            </div>
         </div>
     </div>
 </div>
