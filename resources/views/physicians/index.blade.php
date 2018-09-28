@@ -8,8 +8,7 @@
     <ul style="padding: 6px 8px 6px 16px; text-decoration: none; font-size: 20px; display: block; list-style: none;">
         <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/profile/{{Auth::user()->id}}/edit" style="color:black;">  Profile</a></li>
         <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/myhistory/{{Auth::user()->id}}/edit" style="color:black;">  Personal History</a></li>
-        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/familyhistory/{{Auth::user()->id}}/edit"
-                style="color:black;">  Family History</a></li>
+        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/familyhistory/{{Auth::user()->id}}/edit" style="color:black;">  Family History</a></li>
         <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/physicians" style="color:black;">  Manage Physicians</a></li>
         {{--
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
@@ -22,7 +21,7 @@
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li> --}}
-    </ul>
+      </ul>
 </div>
 
 {{-- Start of the Main Conatiner --}}
@@ -32,22 +31,23 @@
     </div>
     <div class="col-md-12">
         <h2>All My Physicians:
-        <a class="btn btn-primary btn-lg" style="float: right" href="/physicians/create"> Add A Physician</a></h2>
+            <a class="btn btn-info btn-lg" style="float:right; margin-left:10px; color:white" href="{{ url('home') }}">Return Home</a>
+            <a class="btn btn-primary btn-lg" style="float: right" href="/physicians/create"> Add A Physician</a></h2>
     </div>
     <br>
 
-      <a class="btn btn-success" href="{{ url('home') }}">Back</a>
 
     <div class="col-md-12">
     <div class="card-columns" style="column-count:3">
         @foreach ($physicians as $physician)
     <div class="card" style="text-align:center">
             <div class="card-header" style="background-color:#DFEBFA">
-                <p> Nick Name: {{$physician->nickname}}</p>
+                <h4>{{$physician->nickname}}</h4>
             </div>
             <div class="card-body">
-                <p> First Name: {{$physician->firstname}}</p>
-                <p> Last Name: {{$physician->lastname}}</p>
+                <h6>First Name: {{$physician->firstname}}</h6>
+                <h6>Last Name: {{$physician->lastname}}</h6>
+                <h6>Phone Number: {{$physician->phonenumber}}</h6>
                 {{-- go to a specific physician--}}
             </div>
                 <div class="card-footer">
@@ -55,14 +55,14 @@
                 {{-- <form action="physicians/{{$physician->id}}" method="DELETE">
                     <input class="btn btn-info" type="submit">{{$physician->nickname}} Delete
                 </form>    --}}
-
+                <div class="row" style="justify-content:center">
                  <a class="btn btn-info" href="/physicians/{{$physician->id}}/edit">{{$physician->nickname}} Details</a> 
 
                 <form action="/physicians/{{ $physician->id }}" method="post">
                     {!! csrf_field() !!}
                     {{ method_field('delete') }}
-                    <button class="btn btn-default" type="submit">Delete</button>
-                  
+                    <button class="btn btn-danger" style="margin-left:10px" type="submit">Delete</button>
+                </div>
                 </form>
 
             </div>

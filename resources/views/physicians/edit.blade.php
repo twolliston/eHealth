@@ -26,13 +26,14 @@
 
 {{-- Start of the Main Conatiner --}}
 <div class="container col-md-10" style="margin-left: 240px; padding: 0px 10px;">
-  <div class="jumbotron" style="background:url({{ URL::asset('images/physicians.png') }}) no-repeat center center; background-size:100%; height:300px;">
+  <div class="jumbotron" style="background:url({{ URL::asset('images/physicians2.png') }}) no-repeat center center; background-size:100%; height:300px;">
 
   </div>
   <div class="card">
     <div class="card-header" style="background-color:#DFEBFA">
-      Update Physician's Info for {{$physician->nickname}}
-    </div>
+
+      <h3>Physician's Info for {{$physician->nickname}}</h3>
+
 
 @if (session('success'))
 	<div class="flash-message">
@@ -82,33 +83,86 @@
 
           <fieldset class="form-group col-md-6">
             <label for="address_1">Address</label>
-            <input name="address_1" class="form-control" type="text" value="<?= $physician->address_1?>" placeholder="Address">
+            <input name="address_1" class="form-control" type="text" value="<?= $physician->address_1?>" placeholder="Address" required>
           </fieldset>
 
           <fieldset class="form-group col-md-4">
             <label for="address_2">Suite</label>
-            <input name="address_2" class="form-control" type="text" value="<?= $physician->address_2?>" placeholder="Address">
+            <input name="address_2" class="form-control" type="text" value="<?= $physician->address_2?>" placeholder="Suite Number">
           </fieldset>
         </div>
 
         <div class="form-row">
-          <fieldset class="form-group col-md-4">
+          <fieldset class="form-group col-md-3">
             <label for="city">City</label>
             <input name="city" class="form-control" placeholder="City" value="<?= $physician->city ?>" required>
           </fieldset>
 
-          <fieldset class="form-group col-md-4">
+          <fieldset class="form-group col-md-3">
             <label for="county">County</label>
             <input name="county" class="form-control" placeholder="County" value="<?=$physician->county?>" required>
           </fieldset>
 
-          <fieldset class="form-group col-md-2">
+          <div class="form-group col-md-3">
             <label for="state">State</label>
-            <input name="state" class="form-control" placeholder="State" value="<?=$physician->state?>" required>
-          </fieldset>
+            <select name="state" id="state" value="<?= $physician->state ?>" class="form-control" required>
+               <option selected><?= $physician->state ?></option>          
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="District Of Columbia">District Of Columbia</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Mississipp">Mississippi</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value=">Wyoming">Wyoming</option>                    
+            </select>
+          </div>
 
-          <fieldset class="form-group col-md-2">
-            <label for="postalcode">Postal Code</label>
+          <fieldset class="form-group col-md-3">
+            <label for="postalcode">Zip Code</label>
             <input name="postalcode" class="form-control" placeholder="Postal Code" value="<?=$physician->postalcode?>" required>
           </fieldset>
         </div>
@@ -125,14 +179,19 @@
           </fieldset>
 
           <fieldset class="form-group col-md-4">
-            <label for="mobilenumber">Mobile</label>
-            <input name="mobilenumber" class="form-control" placeholder="Mobile Number" value="<?=$physician->mobilenumber?>" required>
+            <label for="mobilenumber">Secondary Number</label>
+            <input name="mobilenumber" class="form-control" placeholder="Mobile Number" value="<?=$physician->mobilenumber?>">
           </fieldset>
         </div>
 
-        <button class="btn btn-primary">Save</button>
-        <a type="button" href="/physicians" class="btn btn-primary">Back</a> 
 
+        <div class="row" style="float:right">
+          <button class="btn btn-primary">Update Info</button>
+
+          <button class="btn btn-info" style="margin-left:15px"><a href="/physicians" style="color:white; text-decoration:none">Go Back</a></button>
       </form>
+      </div>
+
+
       
 @stop
