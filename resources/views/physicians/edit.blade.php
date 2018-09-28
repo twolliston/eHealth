@@ -32,8 +32,20 @@
   <div class="card">
     <div class="card-header" style="background-color:#DFEBFA">
       Update Physician's Info for {{$physician->nickname}}
-
     </div>
+
+@if (session('success'))
+	<div class="flash-message">
+    <div class="alert alert-success col-md-3" id="id">
+    Physician information update succesfully
+    </div>
+    </div>
+@endif
+
+  <script>
+    $('#id').delay(3000).fadeOut('fast');
+  </script>
+
     <div class="card-body">
       <form action="/physicians/{{ $physician->id }}" method="post">
         {{ csrf_field() }} {{ method_field('PATCH')}}
@@ -118,7 +130,7 @@
           </fieldset>
         </div>
 
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary">Save</button>
         <a type="button" href="/physicians" class="btn btn-primary">Back</a> 
 
       </form>

@@ -28,10 +28,25 @@
 <div class="container col-md-10" style="margin-left: 240px; padding: 0px 10px;">
   <div class="jumbotron" style="background:url({{ URL::asset('images/profile.png') }}) no-repeat center center; background-size:60%; height:250px">
   </div>
+
+
   <div class="card">
     <div class="card-header" style="background-color:#DFEBFA">
       Profile for {{$patient->firstname}} {{$patient->lastname}}
     </div>
+
+@if (session('success'))
+	<div class="flash-message">
+    <div class="alert alert-success col-md-3" id="id">
+    Profile update succesfully
+    </div>
+    </div>
+@endif
+
+  <script>
+    $('#id').delay(3000).fadeOut('fast');
+  </script>
+
     <div class="card-body">
       <form action="/patients/profile/{{ $patient->id }}" method="post">
         {{ csrf_field() }} {{ method_field('PATCH')}}
@@ -149,7 +164,7 @@
           <fieldset class="form-group col-md-2">
             <label for="gender">Gender</label>
             <select class="form-control" id="select_1" name="gender">
-        <option>--select one--</option>
+        <option><?= $patient->gender ?></option>
           <option value="Male">Male</option>
         <option value="Female">Female</option>
       </select>
