@@ -38,7 +38,7 @@
 @if (session('success'))
 	<div class="flash-message">
     <div class="alert alert-success col-md-3" id="id">
-    Profile update succesfully
+    Profile Updated Succesfully
     </div>
     </div>
 @endif
