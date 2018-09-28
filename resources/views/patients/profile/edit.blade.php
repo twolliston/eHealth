@@ -30,7 +30,7 @@
   </div>
   <div class="card">
     <div class="card-header" style="background-color:#DFEBFA">
-      Profile for {{$patient->firstname}} {{$patient->lastname}}
+     <h3>Update My Profile</h3>
     </div>
     <div class="card-body">
       <form action="/patients/profile/{{ $patient->id }}" method="post">
@@ -45,7 +45,7 @@
           </div>
           <div class="form-group col-md-4">
             <label for="middle">Middle Name</label>
-            <input name="middle" class="form-control" placeholder="Middle" value="<?= $patient->middle ?>" required>
+            <input name="middle" class="form-control" placeholder="Middle Name" value="<?= $patient->middle ?>">
           </div>
           <div class="form-group col-md-4">
             <label for="lastname">Last Name</label>
@@ -56,24 +56,26 @@
         <div class="form-row">
           <div class="form-group col-md-2">
             <label for="streetnumber">Street Number</label>
-            <input name="streetnumber" class="form-control" placeholder="Street Number" value={{$patient->streetnumber}} required>
+            <input name="streetnumber" class="form-control" placeholder="Street Number" value={{$patient->streetnumber}}
+            required>
           </div>
           <div class="form-group col-md-6">
             <label for="address_1">Address</label>
-            <input name="address_1" class="form-control" type="text" value="<?= $patient->address_1 ?>" placeholder="Address 1">
+            <input name="address_1" class="form-control" type="text" value="<?= $patient->address_1 ?>" placeholder="Address" required>
           </div>
 
           <div class="form-group col-md-4">
-            <label for="address_2">Apartment Number</label>
-            <input name="address_2" class="form-control" type="text" value="<?= $patient->address_2 ?>" placeholder="Address 2">
+            <label for="address_2">Apartment/Condo Number</label>
+            <input name="address_2" class="form-control" type="text" value="<?= $patient->address_2 ?>" placeholder="Apt/Condo Number">
           </div>
         </div>
 
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-3">
             <label for="city">City</label>
             <input name="city" class="form-control" type="text" value="<?= $patient->city ?>" id="city">
           </div>
+
           <div class="form-group col-md-3">
             <label for="state">State</label>
             <select name="state" id="state" value="<?= $patient->state ?>" class="form-control">
@@ -137,47 +139,67 @@
             <label for="county">County</label>
             <input name="county" class="form-control" placeholder="County" value="<?=$patient->county?>" required>
           </div>
-          <div class="form-group col-md-2">
-            <label for="postalcode">Zip</label>
+          <div class="form-group col-md-3">
+            <label for="postalcode">Zip Code</label>
             <input name="postalcode" type="text" class="form-control" value="<?=$patient->postalcode?>" id="postalcode">
           </div>
         </div>
 
-        <hr>
 
         <div class="form-row">
           <fieldset class="form-group col-md-2">
             <label for="gender">Gender</label>
             <select class="form-control" id="select_1" name="gender">
-        <option>--select one--</option>
-          <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
+             <option><?=$patient->gender?></option>
+             <option value="Male">Male</option>
+             <option value="Female">Female</option>
+            </select>
           </fieldset>
+
+          <fieldset class="form-group col-md-2">
+              <label for="maritalstatus">Marital Status</label>
+              <select class="form-control" id="select_2" name="maritalstatus">
+                <option><?=$patient->maritalstatus?></option>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Divorce">Divorce</option>
+                <option value="Widowed">Widowed</option>
+              </select>
+            </fieldset>
+    
 
           <fieldset class="form-group col-md-4">
             <label for="email">Email</label>
             <input name="email" type="email" class="form-control" value={{$patient->email}} placeholder="Email" >
           </fieldset>
 
-          <fieldset class="form-group col-md-3">
+          <fieldset class="form-group col-md-2">
             <label for="phonenumber">Phone Number</label>
             <input name="phonenumber" class="form-control" placeholder="Phone Number" value="<?=$patient->phonenumber?>" required>
           </fieldset>
 
-          <fieldset class="form-group col-md-3">
-            <label for="mobilenumber">Mobile</label>
+          <fieldset class="form-group col-md-2">
+            <label for="mobilenumber">Mobile Number</label>
             <input name="mobilenumber" class="form-control" placeholder="Mobile Number" value="<?=$patient->mobilenumber?>" required>
           </fieldset>
-
-          <button class="btn btn-primary">Save</button>
-         
         </div>
-      </form>
-       <a type="button" href="/home" class="btn btn-primary">Back</a>
-    </div>
+
+        <div class="form-row" style="float:right">
+          <button class="btn btn-primary">Save Profile</button>
+        </form>
+        <button class="btn btn-info" style="margin-left:15px"><a href="/home" style="color:white; text-decoration:none">Return Home</a></button>
+      </div>
+  </div>
+
 
   </div>
+
+
+
+
+
+
+
 
 
 

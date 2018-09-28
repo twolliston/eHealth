@@ -4,13 +4,14 @@
     <h3 style="margin-left: 4px; font-size: 38px; text-align:center"><i class="fas fa-notes-medical" style="margin-left: 3px;"></i> eHealth</h3>
     <br>
 
-    <ul style="padding: 6px 8px 6px 16px; text-decoration: none; font-size: 25px; display: block; list-style: none;">
-        <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/patients/profile/{{Auth::user()->id}}/edit" style="color:black;">  Profile</a></li>
-        <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/patients/familyhistory/{{Auth::user()->id}}/edit" style="color:black;">  Family History</a></li>
-         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/patients/myhistory/{{Auth::user()->id}}/edit" style="color:black;">  Personal History</a></li>
-        {{-- <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/physicians/{{Auth::user()->id}}/edit" style="color:black;">  Manage Physicians</a></li> --}}
-        <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="/physicians" style="color:black;">  Manage Physicians</a></li>
-        {{--<li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
+    <ul style="padding: 6px 8px 6px 16px; text-decoration: none; font-size: 20px; display: block; list-style: none;">
+        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/profile/{{Auth::user()->id}}/edit" style="color:black;">  Profile</a></li>
+        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/myhistory/{{Auth::user()->id}}/edit" style="color:black;">  Personal History</a></li>
+        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/familyhistory/{{Auth::user()->id}}/edit"
+                style="color:black;">  Family History</a></li>
+        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/physicians" style="color:black;">  Manage Physicians</a></li>
+        {{--
+        <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
@@ -28,26 +29,28 @@
     <div class="jumbotron" style="background:url({{ URL::asset('images/emrquestion.png') }}) no-repeat center center; background-size:100%; height:300px;">
     </div>
     <div class="row">
-    <div class="col-md-6">
-        <h2>What is an EMR & why should I create my own?</h2>
-        <p>EMR or Electronic Medical Records is a digital copy of your medical records. Have you ever been a dcotor's office
-            and been handed a clipboard with a ton of documents you probably don't know all the naswers to? Well now you
-            can fill out the same forms that doctor's office provide you from the comfort of your own home. You can also
-            access your own records and update them at your conveneience to help save time when going to see the doctor.</p>
-    </div>
-    {{-- <div class="col-md-1"></div> --}}
-    <div class="col-md-6">
-        <h2>Something else to talk about</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+        <div class="col-md-6">
+            <h2>What is an EMR?</h2>
+            <p>An electronic medical record (EMR) is a digital version of a patient's paper chart. EMRs are real-time, patient-centered
+                records that make information available instantly and securely to authorized users. While an EMR does contain
+                the medical and treatment histories of patients, an EMR system is built to go beyond standard clinical data
+                collected in a provider’s office and can be inclusive of a broader view of a patient’s care.</p>
+        </div>
+        {{--
+        <div class="col-md-1"></div> --}}
+        <div class="col-md-6">
+            <h2>Why should I use this?</h2>
+            <p>Update medical records from the comfort of your own home to quickly share with the doctor of your choice. Will
+                help to save time by having information readily available to you and having the ability to update your record
+                when it's convenient for you.</p>
+        </div>
     </div>
     <br>
     <div class="row">
         <div class="col-md-12">
-            <a href="/patients/create" style="text-align:center"><h3>Get Started by Filling Out Your Profile!!</h3></a>
+            <a href="/patients/create" style="text-align:center">
+                <h3>Get Started by Filling Out Your Profile!!</h3>
+            </a>
         </div>
     </div>
 </div>

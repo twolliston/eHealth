@@ -7,7 +7,7 @@
         <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/profile/{{Auth::user()->id}}/edit" style="color:black;">  Profile</a></li>
         <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/myhistory/{{Auth::user()->id}}/edit" style="color:black;">  Personal History</a></li>
         <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/patients/familyhistory/{{Auth::user()->id}}/edit" style="color:black;">  Family History</a></li>
-        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/physicians/{{Auth::user()->id}}/edit" style="color:black;">  Manage Physicians</a></li>
+        <li><i class="fab fa-medrt" style="margin-right: 3px;"></i><a href="/physicians" style="color:black;">  Manage Physicians</a></li>
         {{--
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
@@ -19,7 +19,7 @@
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li>
         <li><i class="fas fa-ban" style="margin-right: 3px;"></i><a href="#about" style="color:black;">  About</a></li> --}}
-    </ul>
+      </ul>
 </div>
 
 {{-- Start of the Main Content --}}
@@ -28,7 +28,7 @@
     </div>
     <div class="card">
         <div class="card-header" style="background-color:#DFEBFA">
-            Personal History for {{$patient->firstname}} {{$patient->lastname}}
+            <h3>Personal History</h3>
         </div>
         <div class="card-body">
             <form action="/patients/myhistory/{{ $patient->id }}" method="post">
@@ -706,8 +706,12 @@
                         </div>
                     </div>
                     <br>
+                   
+                    <div class="row" style="float:right">
                     <button class="btn btn-primary">Submit</button>
-            </form>
+                        </form>
+                    <button class="btn btn-info" style="margin-left:15px"><a href="/home" style="color:white; text-decoration:none">Return Home</a></button>
+                </div>
         </div>
     </div>
 </div>
