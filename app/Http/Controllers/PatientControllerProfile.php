@@ -28,7 +28,12 @@ class PatientControllerProfile extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
+  
     {
+        // send message
+        $successmessage = 'Update successful';
+        $request->session()->flash('success', $successmessage);
+
         //  update specific user
 
         $patient = Patient::find($id);
@@ -62,11 +67,23 @@ class PatientControllerProfile extends Controller
         if (strlen($request->state) !== 0) {
             $patient->state = $request->state;
         }
+        if (strlen($request->gender) !== 0) {
+            $patient->gender = $request->gender;
+        }
         if (strlen($request->postalcode) !== 0) {
             $patient->postalcode = $request->postalcode;
         }
         if (strlen($request->county) !== 0) {
             $patient->county = $request->county;
+        }
+        if (strlen($request->phonenumber) !== 0) {
+            $patient->phonenumber = $request->phonenumber;
+        }
+        if (strlen($request->mobilenumber) !== 0) {
+            $patient->mobilenumber = $request->mobilenumber;
+        }
+        if (strlen($request->email) !== 0) {
+            $patient->email = $request->email;
         }
 
          // todo Do not implode when array is empty   

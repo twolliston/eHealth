@@ -29,8 +29,11 @@ class PatientControllerMyHistory extends Controller
      */
     public function update(Request $request, $id)
     {
-        //  update specific user
+        // send message
+        $successmessage = 'Update successful';
+        $request->session()->flash('success', $successmessage);
 
+        //  update specific user
         $patient = Patient::find($id);
         // //Save out the new Patient
 

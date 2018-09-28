@@ -31,6 +31,19 @@
         <div class="card-header" style="background-color:#DFEBFA">
             <h3>Family History</h3>
         </div>
+        
+@if (session('success'))
+	<div class="flash-message">
+    <div class="alert alert-success col-md-3" id="id">
+    Profile update succesfully
+    </div>
+    </div>
+@endif
+
+  <script>
+    $('#id').delay(3000).fadeOut('fast');
+  </script>
+
         <div class="card-body">
             <form action="/patients/familyhistory/{{ $patient->id }}" method="post">
                 {{ csrf_field() }} {{ method_field('PATCH')}}

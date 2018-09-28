@@ -30,6 +30,18 @@
         <div class="card-header" style="background-color:#DFEBFA">
             <h3>Personal History</h3>
         </div>
+        
+ @if (session('success'))
+	<div class="flash-message">
+        <div class="alert alert-success col-md-3" id="id">
+        Profile update succesfully
+        </div>
+    </div>
+@endif
+
+  <script>
+    $('#id').delay(3000).fadeOut('fast');
+  </script>
         <div class="card-body">
             <form action="/patients/myhistory/{{ $patient->id }}" method="post">
                 {{ csrf_field() }} {{ method_field('PATCH')}}
@@ -708,10 +720,12 @@
                     <br>
                    
                     <div class="row" style="float:right">
-                    <button class="btn btn-primary">Submit</button>
+                    <button class="btn btn-primary">Save</button>
+
                         </form>
                     <button class="btn btn-info" style="margin-left:15px"><a href="/home" style="color:white; text-decoration:none">Return Home</a></button>
                 </div>
+
         </div>
     </div>
 </div>

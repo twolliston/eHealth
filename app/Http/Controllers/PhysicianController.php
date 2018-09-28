@@ -129,11 +129,16 @@ class PhysicianController extends Controller
      */
     public function update(Request $request, $id)
     {
-       // update specific user
-    
-       $physician = Physician::find($id);
-       //Save out the new Physician
 
+       // send message
+       $successmessage = 'Update successful';
+       $request->session()->flash('success', $successmessage);
+
+       // get specific user
+       $physician = Physician::find($id);
+
+
+       //Save out the new Physician
        if (strlen($request->nickname) !== 0) {
         $physician->nickname = $request->nickname;
        }
@@ -164,13 +169,26 @@ class PhysicianController extends Controller
        if (strlen($request->postalcode) !== 0) {
         $physician->postalcode = $request->postalcode;
        }
+       if (strlen($request->county) !== 0) {
+        $physician->county = $request->county;
+       }
+       if (strlen($request->email) !== 0) {
+        $physician->email = $request->email;
+       }
+       if (strlen($request->phonenumber) !== 0) {
+        $physician->phonenumber = $request->phonenumber;
+       }
+       if (strlen($request->mobilenumber) !== 0) {
+        $physician->mobilenumber = $request->mobilenumber;
+       }
      
-       // $patient->save();
+       $physician->save();
 
        //Return the view
 
        // return redirect()->action('PatientController@show', [$id]);
-        return redirect()->action('PhysicianController@index');
+        // return redirect()->action('PhysicianController@index');
+        return redirect()->action('PhysicianController@edit', [$id]);
     
       
     }

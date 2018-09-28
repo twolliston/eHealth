@@ -31,9 +31,22 @@
   </div>
   <div class="card">
     <div class="card-header" style="background-color:#DFEBFA">
+
       <h3>Physician's Info for {{$physician->nickname}}</h3>
 
+
+@if (session('success'))
+	<div class="flash-message">
+    <div class="alert alert-success col-md-3" id="id">
+    Physician information update succesfully
     </div>
+    </div>
+@endif
+
+  <script>
+    $('#id').delay(3000).fadeOut('fast');
+  </script>
+
     <div class="card-body">
       <form action="/physicians/{{ $physician->id }}" method="post">
         {{ csrf_field() }} {{ method_field('PATCH')}}
@@ -170,6 +183,7 @@
             <input name="mobilenumber" class="form-control" placeholder="Mobile Number" value="<?=$physician->mobilenumber?>">
           </fieldset>
         </div>
+
 
         <div class="row" style="float:right">
           <button class="btn btn-primary">Update Info</button>
